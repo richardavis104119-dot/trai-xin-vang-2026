@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-900: #060e1f;
+  --color-navy-800: #0a1628;
+  --color-navy-700: #0f1729;
+  --color-royal-gold: #d4a843;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1e293b #0a1628;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0a1628;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Custom select styling */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  padding-right: 2rem;
+}
+
+/* Date input fix for dark theme */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+/* Smooth transitions */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Animation keyframes */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 168, 67, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 168, 67, 0.3);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite linear;
+  background-size: 200% 100%;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+/* Table responsive */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.75rem;
+  }
+  
+  th, td {
+    padding: 0.5rem 0.35rem;
+  }
+}
+
+body {
+  background-color: #060e1f;
+  color: #e2e8f0;
+}
